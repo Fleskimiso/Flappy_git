@@ -54,7 +54,7 @@ public class Flappyframe extends JFrame implements KeyListener {
         if (e.getKeyChar ( ) == ' ') {
             System.out.println (this.application_panel.flappy_bird.getX_cordinate ( ));
             System.out.println ("Y cordiante  " + this.application_panel.flappy_bird.getY_cordinate () );
-            this.application_panel.flappy_bird.move_y_by_10 ();
+            this.application_panel.flappy_bird.jump();
 
         }
     }

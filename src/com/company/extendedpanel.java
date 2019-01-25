@@ -22,7 +22,7 @@ public class extendedpanel extends JPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.clearRect (0,0,2000,2000);
-        g2.drawImage (flappy_bird.getBird_image (),flappy_bird.getX_cordinate (), (int) flappy_bird.getY_cordinate (),this);
+        g2.drawImage (flappy_bird.getBird_image (),(int)flappy_bird.getX_cordinate (), (int) flappy_bird.getY_cordinate (),this);
 
         g2.setColor (Color.green);
         for (int i = 0; i < blocksArrayList.size ( ); i++) {
@@ -40,14 +40,14 @@ public class extendedpanel extends JPanel {
 
     public void update_game_logic(double delta, int height,Flappyframe game_instance)
     {
-        double bird_change_in_Y = 3;
+
         if(flappy_bird.getY_cordinate () > height)
         {
 
         }
         else
         {
-            flappy_bird.setY_cordinate (   flappy_bird.getY_cordinate ()   +  (bird_change_in_Y*delta) );
+            flappy_bird.position_actualization(delta);
         }
         for (int i = 0; i < blocksArrayList.size ( ); i++) {
             blocksArrayList.get (i).move_blocks (delta);
